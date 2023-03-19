@@ -1,0 +1,21 @@
+{
+  "name": "intervention-randomizer-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "build": "npx tsc",
+    "serve": "nodemon server.ts",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.15.3",
+    "concurrently": "^7.6.0",
+    "nodemon": "^2.0.21",
+    "typescript": "^5.0.2"
+  }
+}
