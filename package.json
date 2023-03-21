@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "build": "npx tsc",
-    "serve": "nodemon server.ts",
+    "serve": "nodemon api/app.ts",
     "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
   },
   "keywords": [],
@@ -22,6 +22,7 @@
   "dependencies": {
     "@prisma/client": "^4.11.0",
     "@types/cors": "^2.8.13",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "morgan": "^1.10.0"
   }
 }
