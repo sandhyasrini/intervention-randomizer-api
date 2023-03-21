@@ -131,7 +131,7 @@ This project uses the following environment variables:
 | Name                          | Description                         | Default Value                                  |
 | ----------------------------- | ------------------------------------| -----------------------------------------------|
 |ORIGIN           | Cors accepted values            | "http://localhost:3000"      |
-|PORT           | Port on which the server runs            | "http://localhost:3001"      |
+|PORT           | Port on which the server runs            | "3001"      |
 |DATABASE_URL           | Connection string for Postgres            | "postgres://{username}:{password}@localhost:5432/beyond_play"      |
 
 
