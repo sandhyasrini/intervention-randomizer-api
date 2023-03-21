@@ -1,0 +1,232 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Beyondplay Coding Challenge CRUD",
+    "description": "API Definitions created for Beyondplay COding Challenge",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:3001",
+  "basePath": "/api/v1",
+  "tags": [
+    {
+      "name": "CRUD Operations on List of developers",
+      "description": ""
+    }
+  ],
+  "paths": {
+    "/getDevelopers": {
+      "get": {
+        "summary": "Get all developers",
+        "description": "Get All developers from the Database",
+        "produces": ["application/json"],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/developersResponse"
+              },
+              "example": {
+                "developers": [
+                  {
+                    "id": 2,
+                    "name": "Harry Potter",
+                    "email": "harry@chosenone.com",
+                    "role": "Backend",
+                    "status": "Full Time",
+                    "team": "Team G"
+                  },
+                  {
+                    "id": 7,
+                    "name": "Sandhya",
+                    "email": "sandhyasrinivasan.1502@gmail.com",
+                    "role": "Backend",
+                    "status": "Not available",
+                    "team": "Team S"
+                  }
+                ]
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid status value",
+            "schema": {
+              "$ref": "#/definitions/errorResponse"
+            },
+            "example": {
+              "message": "Not Found"
+            }
+          }
+        }
+      }
+    },
+    "/addDeveloper": {
+      "post": {
+        "summary": "Add new Developer",
+        "description": "Add new developer to the Database",
+        "produces": ["application/json"],
+        "parameters": [
+            {
+                "in": "body",
+                "name": "body",
+                "description": "task object",
+                "required": true,
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "value" : {
+                            "type": "object",
+                            "$ref": "#/definitions/developerObjectStructure"
+                        } 
+                    }
+                }
+            }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful Addition to Database",
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/developersResponse"
+              },
+              "example": {
+                "addNewDeveloper": [
+                  {
+                    "id": 2,
+                    "name": "Harry Potter",
+                    "email": "harry@chosenone.com",
+                    "role": "Backend",
+                    "status": "Full Time",
+                    "team": "Team G"
+                  },
+                  {
+                    "id": 7,
+                    "name": "Sandhya",
+                    "email": "sandhyasrinivasan.1502@gmail.com",
+                    "role": "Backend",
+                    "status": "Not available",
+                    "team": "Team S"
+                  }
+                ]
+              }
+            }
+          },
+          "500": {
+            "description": "Invalid status value",
+            "schema": {
+              "$ref": "#/definitions/errorResponse"
+            },
+            "example": {
+              "message": "Unable to create user"
+            }
+          }
+        }
+      }
+    },
+    "/editDeveloper" : {
+        "put" : {
+            "summary" : "Edit developer ",
+            "description": "Edit Developer that has been selected",
+            "produces": ["application/json"],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "body",
+                    "description": "task object",
+                    "required": true,
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "value" : {
+                                "type": "object",
+                                "$ref": "#/definitions/developerObjectStructure"
+                            } 
+                        }
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                  "description": "successfully edited the developer",
+                  "schema": {
+                    "type": "object",
+                    "items": {
+                      "$ref": "#/definitions/developerObjectStructure"
+                    },
+                    "example": {
+                      "editedDeveloper": [
+                        {
+                          "id": 2,
+                          "name": "Harry Potter",
+                          "email": "harry@chosenone.com",
+                          "role": "Backend",
+                          "status": "Full Time",
+                          "team": "Team G"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "500": {
+                  "description": "Invalid status value",
+                  "schema": {
+                    "$ref": "#/definitions/errorResponse"
+                  },
+                  "example": {
+                    "message": "Unable to edit user"
+                  }
+                }
+              }
+        }
+    }
+  },
+  "definitions": {
+    "developersResponse": {
+      "type": "array",
+      "items": {
+        "$ref": "developerObjectStructure"
+      }
+    },
+    "developerObjectStructure": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "team": {
+          "type": "string"
+        }
+      }
+    },
+    "errorResponse": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"]
+}

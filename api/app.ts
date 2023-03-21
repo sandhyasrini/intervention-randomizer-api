@@ -4,8 +4,11 @@ import AppError from "./utils/AppError";
 import _default from "./config/config";
 import router from "./routes/developer.routes";
 import cors from "cors";
+import fs from 'fs'
 const { PrismaClient } = require("@prisma/client");
-
+import swaggerUI from 'swagger-ui-express'
+const swaggerData = fs.readFileSync('swagger.json', 'utf-8');
+const swaggerResult = JSON.parse(swaggerData)
 dotenv.config();
 
 const prisma = new PrismaClient();
@@ -21,6 +24,7 @@ async function bootstrap() {
   // 1.Body Parser
   app.use(express.json({ limit: "10kb" }));
   app.use(express.urlencoded());
+  app.use('/api/docs', swaggerUI.serve, swaggerUI.setup(swaggerResult))
 
   // 2. Cors
   app.use(
