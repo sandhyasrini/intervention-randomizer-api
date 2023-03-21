@@ -114,7 +114,7 @@ Make sure the beyond_play.sql file is present in the folder before running the c
 * If you have Postgres installed in your local system, create a Database called 
 beyond_play and run the beyond_play.sql in postgres to create the DB and inject data.
 
-In the .env file, add your Database URL:
+Create a .env file in the project folder, add your Database URL:
 
 ```
 DATABASE_URL="postgres://{username}:{password}@localhost:5432/beyond_play"
