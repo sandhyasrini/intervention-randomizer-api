@@ -143,7 +143,7 @@ http://localhost:3001/api/docs/#/
 
 ## Todos/Future Scope:
 
-There were some things that will be implemented in the future, which cannot be done now due to time constraint.
+These were not implemented due to time constraints but can be done as part of a future scope 
 
 * Unit Testing
 * Ability to search and find individual user
