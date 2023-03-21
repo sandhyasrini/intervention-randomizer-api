@@ -121,9 +121,6 @@ DATABASE_URL="postgres://{username}:{password}@localhost:5432/beyond_play"
 ```
 If you're running in docker, the default username would be postgres unless specified otherwise
 
-## Accessing UI
-
-The UI can be accessed in http://localhost:3000
 
 ## Environment vars
 This project uses the following environment variables:
