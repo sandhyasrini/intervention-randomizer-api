@@ -25,7 +25,7 @@ async function bootstrap() {
   // 2. Cors
   app.use(
     cors({
-      origin: [_default.origin],
+      origin:process.env.ORIGIN || [_default.origin],
       methods: "GET,HEAD,PUT,PATCH,POST",
       credentials: false,
       preflightContinue: false,
@@ -51,7 +51,7 @@ async function bootstrap() {
     });
   });
 
-  const port = _default.port;
+  const port = process.env.PORT || _default.port;
   app.listen(port, () => {
     console.log(`Server on port: ${port}`);
   });
@@ -64,5 +64,3 @@ bootstrap()
   .finally(async () => {
     await prisma.$disconnect();
   });
-
-// export default app;
