@@ -82,7 +82,7 @@ yarn serve
 
 * If you have docker setup in your machine, you can follow the below steps to setup DB for the Application
 
-Go to the API Project folder cloned in your local system
+Go to the API Project folder(Beyondplay-intervention-randomizer-api) cloned in your local system
 
 Build docker Image for Postgres:
 
@@ -114,13 +114,12 @@ Make sure the beyond_play.sql file is present in the folder before running the c
 * If you have Postgres installed in your local system, create a Database called 
 beyond_play and run the beyond_play.sql in postgres to create the DB and inject data.
 
-In the .env file, add your Database URL:
+Create a .env file in the project folder, add your Database URL:
 
 ```
 DATABASE_URL="postgres://{username}:{password}@localhost:5432/beyond_play"
 ```
 If you're running in docker, the default username would be postgres unless specified otherwise
-
 
 
 ## Environment vars
