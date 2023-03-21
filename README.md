@@ -126,8 +126,6 @@ If you're running in docker, the default username would be postgres unless speci
 ## Environment vars
 This project uses the following environment variables:
 
-This project uses the following environment variables:
-
 | Name                          | Description                         | Default Value                                  |
 | ----------------------------- | ------------------------------------| -----------------------------------------------|
 |ORIGIN           | Cors accepted values            | "http://localhost:3000"      |
