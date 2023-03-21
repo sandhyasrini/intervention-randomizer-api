@@ -82,7 +82,7 @@ yarn serve
 
 * If you have docker setup in your machine, you can follow the below steps to setup DB for the Application
 
-Go to the API Project folder cloned in your local system
+Go to the API Project folder(Beyondplay-intervention-randomizer-api) cloned in your local system
 
 Build docker Image for Postgres:
 
