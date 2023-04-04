@@ -38,9 +38,9 @@ Backend for the case-study application with PostgreSQL, TypeScript, Node.js and 
 
 Install dependencies:
 
-Clone the github repository: https://github.com/sandhyasrini/Beyondplay-coding-challenge
+Clone the github repository: https://github.com/sandhyasrini/Intervention-Randomizer-UI.git
 ```
-cd Beyondplay-coding-challenge
+cd Intervention-Randomizer-UI
 npm install
 ```
 or
@@ -60,9 +60,9 @@ yarn start
 Install dependencies:
 
 Clone this git repository:
-https://github.com/sandhyasrini/Beyondplay-intervention-randomizer-api
+https://github.com/sandhyasrini/intervention-randomizer-api.git
 ```
-cd Beyondplay-intervention-randomizer-api
+cd intervention-randomizer-api
 npm install
 ```
 or
@@ -82,7 +82,7 @@ yarn serve
 
 * If you have docker setup in your machine, you can follow the below steps to setup DB for the Application
 
-Go to the API Project folder(Beyondplay-intervention-randomizer-api) cloned in your local system
+Go to the API Project folder(intervention-randomizer-api) cloned in your local system
 
 Build docker Image for Postgres:
 
